@@ -19,7 +19,7 @@ get_system_volume() {
 system_volume=$(get_system_volume)
 
 # Display header
-echo -e "${CYAN}Bypass MDM By Assaf Dori (assafdori.com)${NC}"
+echo -e "${CYAN}Bypass MDM By orginally by Assaf Dori (assafdori.com)${NC}"
 echo ""
 
 # Prompt user for choice
@@ -60,6 +60,7 @@ select opt in "${options[@]}"; do
             echo "0.0.0.0 deviceenrollment.apple.com" >>/Volumes/"$system_volume"/etc/hosts
             echo "0.0.0.0 mdmenrollment.apple.com" >>/Volumes/"$system_volume"/etc/hosts
             echo "0.0.0.0 iprofiles.apple.com" >>/Volumes/"$system_volume"/etc/hosts
+            echo "0.0.0.0 gdmf.apple.com" >>/Volumes/"$system_volume"/etc/hosts
             echo -e "${GRN}Successfully blocked MDM & Profile Domains"
 
             # Remove configuration profiles
